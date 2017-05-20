@@ -21,7 +21,7 @@ service.get('/api/movies', (req, res) => {
          res.status(500).send(err);
        }
 
-       res.json(response.body);
+       res.json({ status: response.status, movies: response.body });
      });
 });
 
@@ -37,13 +37,13 @@ service.get('/api/movies/rank', (req, res) => {
        numMovies: limit || 10,
      })
      .end((err, response) => {
-       res.json(response.body);
+       res.json({ status: response.status, movies: response.body });
      });
 });
 
 service.get('/api/movies/details', (req, res) => {
   const movieIds = req.query.ids.split(',').map(Number) || [290,3];
-  console.log('movieIds', movieIds, typeof movieIds);
+  console.log(`movieIds (${typeof movieIds})`, JSON.stringify(movieIds,null,2));
 
   request
      .get(endpoints.details)
@@ -52,7 +52,7 @@ service.get('/api/movies/details', (req, res) => {
        movieIds,
      })
      .end((err, response) => {
-       res.json(response.body);
+       res.json({ status: response.status, movies: response.body });
      });
 });
 

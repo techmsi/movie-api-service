@@ -1,6 +1,6 @@
 {
-  "description": "API service",
-  "name": "api-service",
+  "name": "movie-api-service",
+  "description": "Movie API service",
   "dependencies": {
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
