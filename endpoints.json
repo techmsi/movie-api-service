@@ -1,0 +1,5 @@
+{
+  "all": "https://interview.zocdoc.com/api/1/FEE/AllMovies",
+  "rank": "https://interview.zocdoc.com/api/1/FEE/MoviesByRank",
+  "details": "https://interview.zocdoc.com/api/1/FEE/MovieDetails"
+}
